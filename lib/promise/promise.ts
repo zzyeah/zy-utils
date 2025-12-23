@@ -11,8 +11,8 @@ export enum PromiseState {
       : T extends PromiseState.rejected
       ? OnRejected
       : OnFullFilled;
-  export type HandlerState = Omit<PromiseState, PromiseState.pending>;
-  export interface Handler<T extends HandlerState> {
+  export type ZyHandlerState = Omit<PromiseState, PromiseState.pending>;
+  export interface Handler<T extends ZyHandlerState> {
     executor: Executor<T>;
     state: T;
     resolve: any;
@@ -48,7 +48,7 @@ export enum PromiseState {
   export class ZyPromise {
     private _state: PromiseState = PromiseState.pending;
     private _value = undefined;
-    private _handlers: Handler<HandlerState>[] = []; // 处理函数形成的队列
+    private _handlers: Handler<ZyHandlerState>[] = []; // 处理函数形成的队列
     constructor(executor: (resolve, reject) => any) {
       try {
         executor(this._resolve.bind(this), this._reject.bind(this));
@@ -78,7 +78,7 @@ export enum PromiseState {
      * @param resolve 让then函数返回的Promise成功
      * @param reject 让then函数返回的Promise失败
      */
-    private _pushHandler<T extends HandlerState>(
+    private _pushHandler<T extends ZyHandlerState>(
       executor: Executor<T>,
       state: T,
       resolve,
@@ -103,7 +103,7 @@ export enum PromiseState {
       }
     }
   
-    private _runOneHandler<T extends HandlerState>({
+    private _runOneHandler<T extends ZyHandlerState>({
       state,
       executor,
       resolve,
