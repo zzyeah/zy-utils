@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    // 使用 electron-store 存储数据，需要node16+
+    // "module": "nodenext",
+    // "moduleResolution": "nodenext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es6",
+    // 添加以下配置来解决模块系统问题
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "ipc.ts",
+    "electron-app.ts",
+    "electron-main.ts",
+    "preload.ts",
+    "renderer.d.ts",
+    "index.ts",
+    "class/**/*.ts",
+    "src/**/*.ts",
+    "components/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "umi"
+  ]
+}
