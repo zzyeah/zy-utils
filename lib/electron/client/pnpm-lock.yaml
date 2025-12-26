@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^22.19.2
         version: 22.19.2
+      dexie:
+        specifier: ^4.2.1
+        version: 4.2.1
       electron-store:
         specifier: ^11.0.2
         version: 11.0.2
@@ -155,6 +158,9 @@ packages:
 
   detect-node@2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
+
+  dexie@4.2.1:
+    resolution: {integrity: sha512-Ckej0NS6jxQ4Po3OrSQBFddayRhTCic2DoCAG5zacOfOVB9P2Q5Xc5uL/nVa7ZVs+HdMnvUPzLFCB/JwpB6Csg==}
 
   dot-prop@10.1.0:
     resolution: {integrity: sha512-MVUtAugQMOff5RnBy2d9N31iG0lNwg1qAoAOn7pOK5wf94WIaE3My2p3uwTQuvS2AcqchkcR3bHByjaM0mmi7Q==}
@@ -645,6 +651,8 @@ snapshots:
 
   detect-node@2.1.0:
     optional: true
+
+  dexie@4.2.1: {}
 
   dot-prop@10.1.0:
     dependencies:
