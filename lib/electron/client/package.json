@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "tsc && electron . && pnpm deleteJs",
+    "start-dev-win": "tsc && electron . && pnpm deleteJsWin",
     "start": "nodemon --exec NODE_ENV=development pnpm run start-dev --watch ./ --ext .ts ",
     "deleteJs": "find . -path \"./node_modules\" -prune -o -name \"*.js\" -exec rm -rf {} \\;",
+    "deleteJsWin": "for /r . %i in (*.js) do @echo %i | findstr /v /i \"node_modules\" >nul && del \"%i\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
