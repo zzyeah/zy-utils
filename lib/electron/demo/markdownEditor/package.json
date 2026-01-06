@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "dev": "nodemon --exec NODE_ENV=development electron . --watch ./ --ext .js",
+    "start": "NODE_ENV=production electron ."
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,8 @@
     "simplemde": "^1.11.2"
   },
   "devDependencies": {
-    "electron": "^39.2.7"
+    "electron": "^39.2.7",
+    "electron-reload": "2.0.0-alpha.1",
+    "nodemon": "^3.1.11"
   }
 }
